@@ -21,7 +21,7 @@ public class Note {
 
     private String content;
 
-    private String userId;
+    private Long userId;
 
     private String userNickname;
 

@@ -24,6 +24,9 @@ import java.util.stream.Collectors;
 @RefreshScope
 public class UserController {
 
+    /**
+     * 从配置服务拉取配置
+     */
     @Value(value = "${showAccessLog:false}")
     private boolean showAccessLog;
 

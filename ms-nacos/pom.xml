@@ -29,6 +29,11 @@
                 <artifactId>spring-cloud-starter-bootstrap</artifactId>
                 <version>${spring-cloud.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
 
             <!-- nacos -->
             <dependency>
@@ -55,6 +60,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
         <!-- nacos -->
