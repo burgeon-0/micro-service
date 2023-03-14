@@ -2,10 +2,10 @@ package org.bg181.ms.nacos.user;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.bg181.ms.nacos.user.User;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,9 +21,10 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @RequestMapping("/api/users")
+@RefreshScope
 public class UserController {
 
-    @NacosValue(value = "${showAccessLog:false}", autoRefreshed = true)
+    @Value(value = "${showAccessLog:false}")
     private boolean showAccessLog;
 
     @GetMapping

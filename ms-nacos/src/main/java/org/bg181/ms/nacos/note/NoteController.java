@@ -2,8 +2,9 @@ package org.bg181.ms.nacos.note;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,9 +24,10 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @RequestMapping("/api/notes")
+@RefreshScope
 public class NoteController {
 
-    @NacosValue(value = "${showAccessLog:false}", autoRefreshed = true)
+    @Value(value = "${showAccessLog:false}")
     private boolean showAccessLog;
 
     @GetMapping
